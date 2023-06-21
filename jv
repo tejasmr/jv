@@ -7,3 +7,5 @@ if [ $argument_count == 0 ]; then
   exit 1
 fi
 
+command_count=$(jq -r '.commands | length' 'commands.json')
+echo 'jv: Command Count: ' $command_count
