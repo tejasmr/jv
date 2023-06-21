@@ -1,0 +1,32 @@
+{
+  "commands": [
+    {
+      "name": "new",
+      "arguments": ["name"]
+    },
+    {
+      "name": "init",
+      "arguments": []
+    },
+    {
+      "name": "clean",
+      "arguments": []
+    },
+    {
+      "name": "build",
+      "arguments": []
+    },
+    {
+      "name": "run",
+      "arguments": []
+    },
+    {
+      "name": "test",
+      "arguments": []
+    },
+    {
+      "name": "install",
+      "arguments": ["name"]
+    }
+  ]
+}
