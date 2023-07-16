@@ -27,6 +27,10 @@
     {
       "name": "install",
       "arguments": ["name"]
+    },
+    {
+      "name": "help",
+      "arguments": []
     }
   ]
 }
