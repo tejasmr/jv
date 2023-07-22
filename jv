@@ -1,11 +1,29 @@
 #!/bin/bash
 
+# get argument count
 argument_count=$#
 
+# check how many commands we have in jv
+command_count=$(jq -r '.commands | length' 'commands.json')
+echo 'jv: Command Count: ' $command_count
+
+# check if command is passed with jv
 if [ $argument_count == 0 ]; then 
   echo "jv: Requires command"
   exit 1
 fi
 
-command_count=$(jq -r '.commands | length' 'commands.json')
-echo 'jv: Command Count: ' $command_count
+# get the ith command name 
+get_command_name() {
+  echo $(jq -r ".commands[$1].name" 'commands.json')
+}
+
+command_names_list=()
+
+for (( i=0; i<$command_count; i++ )) do 
+  command_names_list[$i]+=$(get_command_name $i)
+done
+
+for command_name in ${command_names_list[@]}; do
+  echo $command_name
+done
